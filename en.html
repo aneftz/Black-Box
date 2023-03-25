@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap -->
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" />
+
+    <title>Black Box</title>
+</head>
+
+<body>
+
+    <main class="container">
+        <div class="px-4 py-5 my-5 d-flex align-items-center flex-column">
+            <div class="mb-3 text-center">
+                <h1>Motorola Radio - Hash Generator</h1>
+                <h4>(Click on text to copy key to clipboard)</h3>
+            </div>
+            <div class="mb-3">
+                <div class="alert alert-success" role="alert">
+                    Enhanced privacy keys (<b>EPK</b>) contain <b>1</b> to <b>10</b> Unicode characters, including only
+                    <b>0-9</b>, <b>A-F</b> (hexadecimal format).
+                </div>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" id="enhanzed_key_size" type="number" value="10" min="1" max="10">
+            </div>
+            <div class="mb-3">
+                <output id="output" data-clipboard-target="#output"></output>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-success" type="button"
+                    onclick="generateHexadecimalKey('enhanzed_key_size')">Generate <b>EPK</b></button>
+            </div>
+            <hr />
+            <div class="mb-3">
+                <div class="alert alert-primary" role="alert">
+                    Symmetric keys (<b>SK</b>) contain <b>1</b> to <b>64</b> Unicode characters, including only
+                    <b>0-9</b>, <b>A-F</b> (hexadecimal format).
+                </div>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" id="symmetric_key_size" type="number" value="64" min="1" max="64">
+            </div>
+            <div class="mb-3">
+                <output id="output2" data-clipboard-target="#output2"></output>
+            </div>
+
+            <div class="mb-3">
+                <button class="btn btn-primary" type="button"
+                    onclick="generateHexadecimalKey1('symmetric_key_size')">Generate <b>SK</b></button>
+            </div>
+            <hr />
+            <div class="mb-3">
+                <div class="alert alert-secondary" role="alert">
+                    Restricted Access to System (<b>RAS</b>) contain <b>6</b> до <b>24</b> Unicode characters, including
+                    only <b>0-9</b>, <b>A-Z</b>, <b>a-z</b>, hyphen "<b>-</b>", underscore "<b>_</b>", dollar "<b>$</b>"
+                    and pound "<b>#</b>".
+                </div>
+            </div>
+            <div class="mb-3">
+                <input class="form-control" id="ras_id_size" type="number" value="24" min="6" max="24">
+            </div>
+            <div class="mb-3">
+                <output id="output_rsa" data-clipboard-target="#output_rsa"></output>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-secondary" type="button" onclick="generateRASID('ras_id_size')">Generate
+                    <b>(RAS)</b></button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="text-center container">
+            <div class="col-lg-6 mx-auto">
+                
+                <p class="lead mb-4">
+                    <a class="text-decoration-none text-primary" href="index.html">Українська версія</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copy to Clipboard cdn function -->
+    <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.10/dist/clipboard.min.js"></script>
+    <!-- Main script -->
+    <script src="main.js"></script>
+</body>
+
+</html>
